@@ -4,7 +4,7 @@
 <body>
 	<nav th:replace="~{base :: nav}"></nav>
 	<main class="container-fluid">
-		<h2>Carros em destaque:</h2>
+		<h2 th:text="'Carros ' + ( (${tipo} == 'novo')? 'Novos' : 'Seminovos')"></h2>
 		<div class="row">
 			<div th:replace="~{base :: card}"></div>
 		</div>

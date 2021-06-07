@@ -1,16 +1,12 @@
 package com.unialfa.hackathonsite.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
-import com.unialfa.hackathonsite.modules.Tipo;
 
 @Entity
 public class Veiculo {
@@ -20,10 +16,10 @@ public class Veiculo {
 	private String modelo;
 	private Date anomodelo;
 	private Date anofabricacao;
-	private Double valor;
-
-	@Enumerated(EnumType.STRING)
-	private Tipo tipo;
+	private String valor;
+	private String tipo;
+	private String foto;
+	private String opcionais;
 
 	@ManyToOne
 	private Marca marca;
@@ -33,8 +29,6 @@ public class Veiculo {
 
 	@ManyToOne
 	private Usuario usuario;
-
-	private String opcionais;
 
 	public Long getId() {
 		return id;
@@ -52,12 +46,20 @@ public class Veiculo {
 		return anofabricacao;
 	}
 
-	public Double getValor() {
+	public String getValor() {
 		return valor;
 	}
 
-	public Tipo getTipo() {
+	public String getTipo() {
 		return tipo;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public String getOpcionais() {
+		return opcionais;
 	}
 
 	public Marca getMarca() {
@@ -70,10 +72,6 @@ public class Veiculo {
 
 	public Usuario getUsuario() {
 		return usuario;
-	}
-
-	public String getOpcionais() {
-		return opcionais;
 	}
 
 }

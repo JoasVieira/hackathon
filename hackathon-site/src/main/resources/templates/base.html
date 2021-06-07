@@ -1,0 +1,52 @@
+<head th:fragment="head">
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+		crossorigin="anonymous">
+	<meta charset="utf-8">
+	<title>In Development</title>
+</head>
+
+<nav th:fragment="nav" class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="/"> 
+			<img src="/assets/logo.png" alt="" height="50px">
+		</a>
+		<ul class="navbar-nav me-auto mb-lg-0">
+			<li class="nav-item">
+				<a class="nav-link h6" href="/" style="color: #fa6489">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link h6" href="/sobre" style="color: #fa6489">Sobre a empresa</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link h6" href="/veiculos/novo" style="color: #fa6489">Novos</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link h6" href="/veiculos/seminovo" style="color: #fa6489">Seminovos</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div th:fragment="card" class="card col-12 col-md-4" th:each="veiculo : ${veiculos}">
+	<img class="card-img-top w-100 mt-2" th:attr="src=@{/images/}+${veiculo.foto}, alt=${veiculo.modelo}, title=${veiculo.modelo}">
+	<div class="card-body">
+		<h4 class="card-title" th:text="${veiculo.modelo}"></h4>
+		<p class="card-text text-muted" th:text="${veiculo.opcionais}"></p>
+		<h3 class="card-text" th:text="${#numbers.formatCurrency(veiculo.valor)}"></h3>
+		<div class="clearfix">
+			<p class="card-text float-start text-muted" th:text="${#dates.year(veiculo.anomodelo)}+'/'+${#dates.year(veiculo.anofabricacao)}"></p>
+			<p class="card-text float-end text-muted" th:text="${veiculo.tipo}"></p>
+		</div>
+		<a href="#" class="btn btn-success">Detalhes</a>
+	</div>
+</div>
+
+<script
+	th:fragment="script"
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+	crossorigin="anonymous">
+</script>
