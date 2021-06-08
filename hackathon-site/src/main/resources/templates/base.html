@@ -4,8 +4,9 @@
 		rel="stylesheet"
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
 		crossorigin="anonymous">
+		<link rel="shortcut icon" type="image/png" href="/assets/favicon.png"/>
 	<meta charset="utf-8">
-	<title>In Development</title>
+	<title>Cars Cherry</title>
 </head>
 
 <nav th:fragment="nav" class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -40,7 +41,7 @@
 			<p class="card-text float-start text-muted" th:text="${#dates.year(veiculo.anomodelo)}+'/'+${#dates.year(veiculo.anofabricacao)}"></p>
 			<p class="card-text float-end text-muted" th:text="${veiculo.tipo}"></p>
 		</div>
-		<a href="#" class="btn btn-success">Detalhes</a>
+		<a th:href="@{/veiculo/detalhe/(id=${veiculo.id})}" class="btn btn-success">Detalhes</a>
 	</div>
 </div>
 

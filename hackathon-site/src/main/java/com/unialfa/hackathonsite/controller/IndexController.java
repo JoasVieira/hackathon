@@ -1,5 +1,7 @@
 package com.unialfa.hackathonsite.controller;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,10 +30,17 @@ public class IndexController {
 	}
 
 	@RequestMapping("/veiculos/{tipo}")
-	public String novos(@PathVariable String tipo, Model model) {
+	public String tipos(@PathVariable String tipo, Model model) {
 		model.addAttribute("veiculos", veiculoRepository.findByTipo(tipo));
 		model.addAttribute("tipo", tipo);
 
 		return "veiculos/tipo";
+	}
+	
+	@RequestMapping("/veiculo/detalhe")
+	public String detalhes(@PathParam(value = "id") Long id, Model model) {
+		model.addAttribute("veiculo", veiculoRepository.getById(id));
+
+		return "veiculos/detalhe";
 	}
 }
