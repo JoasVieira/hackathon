@@ -1,0 +1,27 @@
+.bg-login-image {
+	background: url(../images/login.png) center;
+}
+
+.parsley-errors-list {
+	color: #F00;
+	margin-left: -10px;
+}
+
+.card-body h3 {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+thead {
+	background: #ccc;
+}
+
+label {
+	margin-top: 10px;
+}
+
+iframe {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 20px 0;
+}
