@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -38,6 +42,8 @@
   <script src="js/jquery.maskMoney.min.js"></script>
   <script src="vendor/datatables/jquery.dataTables.min.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="js/sweetalert2.js"></script>
+
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -51,18 +57,43 @@
 
   <link rel="stylesheet" type="text/css" href="vendor/summernote/summernote.min.css">
   <link rel="stylesheet" type="text/css" href="vendor/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" type="text/css" href="css/sweetalert2.min.css">
 
-  <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
 </head>
 
 <body id="page-top">
   <?php
+  if (!isset($_SESSION["admin"]["id"])) {
+    include "paginas/login.php";
 
-  include "libs/conectar.php";
+  } else {
+    include "libs/conectar.php";
 
-  include "header.php";
+    include "header.php";
 
-  include "footer.php";
+    $pagina = "paginas/home.php";
+
+    if (isset($_GET['param'])) {
+
+      $param = trim($_GET['param']);
+      $param = explode("/", $param);
+
+      $pasta = $param[0];
+      $arquivo = $param[1];
+      $id = $param[2] ?? NULL;
+      $pagina = "{$pasta}/{$arquivo}.php";
+    }
+
+    if (file_exists($pagina)) {
+      include $pagina;
+    } else {
+      include "paginas/erro.php";
+    }
+
+    include "footer.php";
+  }
   ?>
 </body>
 

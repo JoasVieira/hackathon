@@ -28,10 +28,10 @@
       </a>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" href="cadastros/categorias"><i class="fas fa-palette"></i> Cor</a>
-          <a class="collapse-item" href="cadastros/cidades"><i class="fas fa-code-branch"></i> Marca</a>
+          <a class="collapse-item" href="cadastros/cores"><i class="fas fa-palette"></i> Cor</a>
+          <a class="collapse-item" href="cadastros/marcas"><i class="fas fa-code-branch"></i> Marca</a>
           <a class="collapse-item" href="cadastros/usuarios"><i class="fas fa-users"></i> Usuário</a>
-          <a class="collapse-item" href="cadastros/produtos"><i class="fas fa-car"></i> Veículos</a>
+          <a class="collapse-item" href="cadastros/veiculos"><i class="fas fa-car"></i> Veículos</a>
         </div>
       </div>
     </li>
@@ -83,6 +83,7 @@
               <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                 <!-- <?= $_SESSION['admin']['nome'] ?> -->
               </span>
+              <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-600"></i>
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
