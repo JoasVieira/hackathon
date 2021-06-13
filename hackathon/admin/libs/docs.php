@@ -38,6 +38,29 @@ function redirect($titulo, $mensagem, $icone, $location)
   exit;
 }
 
+/* *********************************
+	* Função para formatar valores
+	* $valor - valor em pt
+	*********************************** */
+
+	function formatarValor( $valor ) {
+
+		//10.900,00 -> 10900.00
+		$valor = str_replace(".", "", $valor);
+		return str_replace(",", ".", $valor);
+
+	}
+
+	/*************************************
+	* Função para formatar valor brasileiro
+	* $valor - valor em usa
+	************************************ */
+
+	function formatarValorBR( $valor ) {
+		return number_format($valor, 2, ",", ".");
+		//$valor - casas decimais - separador de decimais - separador de milhares
+	}
+
 
 /*
 	    validaCPF - função para validar CPF

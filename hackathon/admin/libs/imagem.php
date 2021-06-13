@@ -18,17 +18,17 @@ function loadImg($imagem, $nome, $pastaFotos)
   list($largura1, $altura1) = getimagesize($imagem);
 
   //configuracoes do maior tamanho - desktopos
-  $largura = 1200;
+  $largura = 960;
   $percent = ($largura / $largura1);
   $altura = $altura1 * $percent;
 
   //configurações para tamanho médio - tablets
-  $larguram = 800;
+  $larguram = 680;
   $percentm = ($larguram / $largura1);
   $alturam = $altura1 * $percentm;
 
   //configurações para tamanho pequeno - smartphones
-  $largurap = 350;
+  $largurap = 300;
   $percentp = ($largurap / $largura1);
   $alturap = $altura1 * $percentp;
 
@@ -97,7 +97,7 @@ function loadImg($imagem, $nome, $pastaFotos)
     $pontoY = ImagesY($imagem_orig);
     $imagem_fin = ImageCreateTrueColor($largura, $altura);
     ImageCopyResampled($imagem_fin, $imagem_orig, 0, 0, 0, 0, $largura + 1, $altura + 1, $pontoX, $pontoY);
-    ImageJPEG($imagem_fin, $imagem_gerada, 130);
+    ImageJPEG($imagem_fin, $imagem_gerada, 80);
     ImageDestroy($imagem_orig);
     ImageDestroy($imagem_fin);
 
