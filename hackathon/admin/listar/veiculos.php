@@ -89,6 +89,7 @@ if (!isset($_SESSION['admin']['id'])) exit;
 
     Swal.fire({
       title: 'Deseja realmente excluir este registro?',
+      icon: 'question',
       showCancelButton: true,
       confirmButtonText: `Sim`,
       cancelButtonText: `Não`,
