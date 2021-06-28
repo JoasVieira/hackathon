@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{base :: head}">
+	<meta charset="utf-8">
+</head>
+<style>
+.about {
+	text-align: justify;
+	letter-spacing: 0.8px;
+	line-height: 26px;
+}
+</style>
+<body>
+	<nav th:replace="~{base :: nav}"></nav>
+	<main class="container-fluid">
+		<h2>Sobre a empresa:</h2>
+		<div class="container-fluid mt-4">
+			<div class="row">
+				<div class="col-12 col-md-6">
+					<p class="about h5 text-muted ">
+						Há mais de 20 anos na estrada,
+						fomos a primeira startup brasileira a inovar na forma de comprar e
+						vender carros. Líderes de mercado e especialistas no segmento,
+						temos como combustível a paixão pela cultura automotiva e a
+						vontade de oferecer sempre a melhor e mais segura experiência de
+						compra e venda online ;)
+					</p>
+					<p class="about h5 text-muted">
+						A aquisição de 100% ocorreu em
+						2003, ainda pelo Banco Real que, por sua vez, seria comprado em
+						2008 pelo Santander, levando a Web “de brinde” no pacote :)
+					</p>
+					<p class="about h5  text-muted">
+						Em 2013, o Santander vende 30%
+						para a Carsales - líder no mercado de classificados de veículos
+						online na Austrália, e que mantém atividades na China, Nova
+						Zelândia, Tailândia, Malásia, Singapura, Indonésia, Argentina,
+						Mexico e Emirados Árabes.
+					</p>
+					<p class="about h5  text-muted">
+						Conectar pessoas às melhores
+						condições e informações, e criar meios para que façam a melhor
+						escolha na hora de comprar, vender e usar um veículo.
+					</p>
+					<p class="about h5 text-muted">
+						Para que você possa se mover do melhor jeito.
+					</p>
+						
+				</div>
+				<img class="col-12 col-md-6" src="/assets/sobre.jpeg">
+			</div>
+		</div>
+	</main>
+	<script th:replace="~{base :: script}"></script>
+</body>
+</html>

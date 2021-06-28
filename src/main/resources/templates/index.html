@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{base :: head}">
+	<meta charset="utf-8">
+</head>
+<body>
+	<nav th:replace="~{base :: nav}"></nav>
+	<main class="container-fluid">
+		<h2>Carros em destaque:</h2>
+		<div class="row">
+			<div th:replace="~{base :: card}"></div>
+		</div>
+	</main>
+	<script th:replace="~{base :: script}"></script>
+</body>
+</html>
